@@ -1,0 +1,126 @@
+<div class="dashboard-container">
+
+    <div class="dashboard-content-container" data-simplebar>
+        <div class="dashboard-content-inner">
+            <!-- Dashboard Headline -->
+            <div class="dashboard-headline">
+                <h3>Post a Job</h3>
+
+                <!-- Breadcrumbs -->
+                <nav id="breadcrumbs" class="dark">
+                    <ul>
+                        <li><a routerLink="/">Home</a></li>
+                        <li><a routerLink="/dashboard">Dashboard</a></li>
+                        <li>Post a Product</li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Row -->
+            <div class="row">
+                <!-- Dashboard Box -->
+                <div class="col-xl-12">
+                    <div class="dashboard-box margin-top-0">
+                        <!-- Headline -->
+                        <div class="headline">
+                            <h3>
+                                <i class="icon-feather-folder-plus"></i> Job Submission Form
+                            </h3>
+                        </div>
+
+                        <div class="content with-padding padding-bottom-10">
+                            <form [formGroup]="jobForm" action="" method="post" (ngSubmit)="onSubmit()">
+                                <div class="row">
+                                    <div class="col-xl-6">
+
+                                        <div class="submit-field">
+                                            <h5>Job Title</h5>
+                                            <input formControlName="name" type="text" class="" />
+                                        </div>
+
+                                        <p style="color: red;"
+                                            *ngIf="jobForm.controls['name'].touched && jobForm.controls['name'].errors?.['required']">
+                                            its required field</p>
+                                        <p style="color: red;"
+                                            *ngIf="jobForm.controls['name'].touched && jobForm.controls['name'].errors?.['minlength']">
+                                            min value is two characters</p>
+                                    </div>
+
+
+
+                                    <div class="col-xl-6">
+                                        <div class="submit-field">
+                                            <h5>Category</h5>
+                                            <select formControlName="category_id" class="" data-size="7"
+                                                title="Select Category">
+                                                <option value="1">Electonics</option>
+                                                <option value="2">Clothes</option>
+                                            </select>
+                                        </div>
+
+                                        <p style="color: red;"
+                                            *ngIf="jobForm.controls['category_id'].touched && jobForm.controls['category_id'].errors?.['required']">
+                                            its required field</p>
+                                    </div>
+
+
+
+
+
+
+                                    <div class="col-xl-6">
+                                        <div class="submit-field">
+                                            <h5>Price</h5>
+                                            <div class="row">
+                                                <div class="col-xl-6">
+                                                    <div class="input-with-icon">
+                                                        <input formControlName="price" class="with-border" type="number"
+                                                            placeholder="Our Price" />
+                                                        <i class="currency">USD</i>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <div class="input-with-icon">
+                                                        <input formControlName="compare" class="with-border"
+                                                            type="number" placeholder="Compare Price" />
+                                                        <i class="currency">USD</i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-12">
+                                        <div class="submit-field">
+                                            <h5>Job Description</h5>
+                                            <textarea formControlName="description" cols="30" rows="5"
+                                                class="with-border"></textarea>
+
+                                            <p style="color: red;"
+                                                *ngIf="jobForm.controls['description'].touched &&jobForm.controls['description'].errors?.['required']">
+                                                its required field</p>
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-xl-12">
+                                    <!-- <a href="#" class="button ripple-effect big margin-top-30" -->
+
+
+                                    <input type="submit" value="Post" class="button ripple-effect big margin-top-30" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row / End -->
+
+
+        </div>
+    </div>
+    <!-- Dashboard Content / End -->
+</div>

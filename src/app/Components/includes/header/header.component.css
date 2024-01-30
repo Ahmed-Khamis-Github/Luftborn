@@ -1,0 +1,7 @@
+#logo img {
+  transform: translate3d(0, -50%, 0) !important;
+}
+
+#navigation .nav-header {
+  padding: 2px;
+}/*# sourceMappingURL=header.component.css.map */
